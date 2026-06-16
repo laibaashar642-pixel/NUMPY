@@ -62,3 +62,44 @@ print(arr[1:5:2])
 print(arr7[::2])
 #Slicing in 2d arrays
 print(arr5[1,1:4])
+#You can also check datatypes of the arrays
+print(arr.dtype)
+print(arr7.dtype)
+print(arr5.dtype)
+#You can use any type of datatypes like int,float,char,boolean etc
+arr8=np.array(['cherry','banana','apple','orange','lemon'])
+print(arr8.dtype)
+""" Creating Arrays With a Defined Data Type
+We use the array() function to create arrays, this function can take an optional argument: dtype that allows us to define the expected data type of the array elements: """
+
+arr9=np.array([12,89,78.8,90],dtype='S')
+print(arr9.dtype)
+print(arr9)
+""" Converting Data Type on Existing Arrays
+The best way to change the data type of an existing array, is to make a copy of the array with the astype() method.
+
+The astype() function creates a copy of the array, and allows you to specify the data type as a parameter.
+
+The data type can be specified using a string, like 'f' for float, 'i' for integer etc. or you can use the data type directly like float for float and int for integer. """
+#Conversion from float to integer
+arr10=np.array([1.,2.3,4.5,8.9])
+newarr=arr.astype('i')
+print(newarr)
+print(newarr.dtype)
+newarr=arr.astype(int)
+print(newarr)
+#Conversion Integer to Boolean
+newarr=arr.astype(bool)
+print(newarr)
+newarr=arr.astype(float)
+print(newarr)
+""" Difference Between Copy and View
+The main difference between a copy and a view of an array is that the copy is a new array, and the view is just a view of the original array.
+
+The copy owns the data and any changes made to the copy will not affect original array, and any changes made to the original array will not affect the copy.
+
+The view does not own the data and any changes made to the view will affect the original array, and any changes made to the original array will affect the view. Make a copy, change the original array, and display both arrays:"""
+x=arr10.copy()
+arr10[0]=42
+print(arr10)
+print(x)
