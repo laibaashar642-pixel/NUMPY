@@ -103,3 +103,18 @@ x=arr10.copy()
 arr10[0]=42
 print(arr10)
 print(x)
+#making a view changing the orginal array both view and copy did this
+x=arr10.view()
+print(x)
+x[0]=31
+x[1]=23
+x[2]=89
+print(x)
+print(x)
+print(x)
+""" Check if Array Owns its Data
+As mentioned above, copies owns the data, and views does not own the data, but how can we check this?
+
+Every NumPy array has the attribute base that returns None if the array owns the data.
+
+Otherwise, the base  attribute refers to the original object. """
