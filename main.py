@@ -1,0 +1,64 @@
+import numpy as np
+arr=np.array([1,2,3,4])
+print(arr)
+print(type(arr))
+
+print(np.__version__)
+""" NumPy is used to work with arrays. The array object in NumPy is called ndarray.
+We can create a NumPy ndarray object by using the array() function. 
+To create an ndarray, we can pass a list, tuple or any array-like object into the array() method, and it will be converted into an ndarray"""
+arr1=np.array((23,45,67,89))
+print(arr1)
+""" Dimensions in Arrays
+A dimension in arrays is one level of array depth (nested arrays).
+
+nested array: are arrays that have arrays as their elements. 
+0-D Arrays
+0-D arrays, or Scalars, are the elements in an array. Each value in an array is a 0-D array.
+Creation of 0d array"""
+arr3=np.array(43)
+print(arr3)
+#1d array An array that has 0-D arrays as its elements is called uni-dimensional or 1-D array.
+
+arr4=np.array([23,45,78,90])
+print(arr4)
+""" 2-D Arrays
+An array that has 1-D arrays as its elements is called a 2-D array.
+
+These are often used to represent matrix or 2nd order tensors.
+
+NumPy has a whole sub module dedicated towards matrix operations called numpy.mat """
+arr5=np.array([[1,2,3],[4,5,6]])
+print(arr5)
+""" 3-D arrays
+An array that has 2-D arrays (matrices) as its elements is called 3-D array.
+
+These are often used to represent a 3rd order tensor. """
+arr6=([[[1,2,3],[4,5,6]],[[9,10,12],[10,12,13]]])
+print(arr6)
+#NumPy Arrays provides the ndim attribute that returns an integer that tells us how many dimensions the array have
+print(arr.ndim)
+print(arr1.ndim)
+print(arr3.ndim)
+print(arr4.ndim)
+print(arr5.ndim)
+#Accessing Elements by using its index
+print(arr1[0])
+#Access 2d array
+print(arr5[0,1])
+#Access 3d array
+#print(arr6[0, 1, 2]) Not Working
+#Negative Accessing
+print(arr5[0,-1])
+#Slicing Index in Numpy
+#When you have to print from the start Slicing topic revise agian triple way 1d,2d,3d
+arr7=np.array([12,67,89,90])
+print(arr7[0:5])
+print(arr7[3:])
+print(arr7[-3:-1])
+print(arr7[:3])
+print(arr7[:3])
+print(arr[1:5:2])
+print(arr7[::2])
+#Slicing in 2d arrays
+print(arr5[1,1:4])
