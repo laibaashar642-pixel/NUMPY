@@ -1,6 +1,7 @@
 NumPy
 1. What is NumPy?
-NumPy (Numerical Python) is a foundational open-source library for scientific computing in Python. It provides fast, memory-efficient multi-dimensional arrays and a huge collection of mathematical functions to operate on them. Nearly every data science, machine learning, and scientific Python library — pandas, scikit-learn, TensorFlow, SciPy — is built on top of NumPy internally.
+NumPy (Numerical Python) is a foundational open-source library for scientific computing in Python. It provides fast, memory-efficient multi-dimensional arrays and a huge collection of mathematical functions to operate on them. Nearly every data science, machine learning, and scientific Python library — pandas, scikit-learn, TensorFlow, SciPy — is built on top of NumPy internally.Numpy is 52 times faster than actual python list,uses less memory and easy use maths operation.
+Nd arrays jo python ki list ki trah hi hoty hai but many times faster hoty hai
 Quick import convention: import numpy as np  (always use this alias — every tutorial and codebase uses it)
 
 2. How NumPy Was Discovered — The History
@@ -28,6 +29,8 @@ ndim	Number of dimensions (axes) in the array. 1D = vector, 2D = matrix, 3D = te
 size	Total number of elements in the array. Equals the product of all values in shape.
 axis	A specific dimension. axis=0 goes DOWN rows, axis=1 goes ACROSS columns. Critical for sum, mean, etc.
 broadcasting	NumPy's rules for doing math between arrays of different shapes by automatically 'stretching' the smaller array.
+Multidimensional means ore than 2d arrays whether it is 3d,4d,5d........
+Matrix is a fancy name for 2d array
 vectorization	Applying an operation to an entire array at once, without writing a for-loop. The key to NumPy's speed.
 indexing	Accessing specific elements using square brackets: a[0], a[1:4], a[row, col].
 boolean mask	An array of True/False values used to filter elements: a[a > 5] returns only elements greater than 5.

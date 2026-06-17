@@ -1,3 +1,4 @@
+
 import numpy as np
 arr=np.array([1,2,3,4])
 print(arr)
@@ -9,8 +10,17 @@ We can create a NumPy ndarray object by using the array() function.
 To create an ndarray, we can pass a list, tuple or any array-like object into the array() method, and it will be converted into an ndarray"""
 arr1=np.array((23,45,67,89))
 print(arr1)
-""" Dimensions in Arrays
-A dimension in arrays is one level of array depth (nested arrays).
+
+""" Creation of arrays from python list so numpy had given us an array function which is called ndarray 
+Creation of arrays with default values numpy provides a built in function which is called zeroes function jis sai hamara khali array fillup ho jye gha means zero zero hojye gha"""
+zeros_array=np.zeros(3)
+print(zeros_array)
+#Aur agr muje zeros ki jga one fillup krna ho
+ones_array=np.array([1,2,3])
+print(ones_array)
+"""Dimensions in Arrays
+A dimension in arrays is one level of array depth (nested arrays).Creation of arrays from python list 
+
 
 nested array: are arrays that have arrays as their elements. 
 0-D Arrays
@@ -19,9 +29,12 @@ Creation of 0d array"""
 arr3=np.array(43)
 print(arr3)
 #1d array An array that has 0-D arrays as its elements is called uni-dimensional or 1-D array.
-
 arr4=np.array([23,45,78,90])
 print(arr4)
+#matrix menas jo 2d array hi hoty bs unka aik fancy name hai
+matrix=np.array([[2,4,6],
+             [6,7,8]])
+print(matrix)
 """ 2-D Arrays
 An array that has 1-D arrays as its elements is called a 2-D array.
 
@@ -140,6 +153,26 @@ print(newarr)
 newarr=arr.reshape(2,3,2)
 print(newarr)
 #Flatenning the array means converting the multidimensional array into oned array
-i=np.array([12,34,56],[90,45,67])
+i=np.array([[12,34,56],[90,45,67]])
 h=i.reshape(-1)
 print(h)
+""" Iterating means going through elements one by one.
+
+As we deal with multi-dimensional arrays in numpy, we can do this using basic for loop of python.
+
+If we iterate on a 1-D array it will go through each element one by one. """
+j=np.array([1,2,3])
+for x in j:
+    print(j)
+
+# In a 2-D array it will go through all the rows.
+k=np.array([[2,3,4],[5,6,7]])
+for x in k:
+    print(x)
+# In a 3-D array it will go through all the 2-D arrays.
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+for x in arr:
+    print(x)
+    for y in x:
+        for z in y:
+            print(z)
