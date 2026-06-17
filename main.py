@@ -118,3 +118,28 @@ As mentioned above, copies owns the data, and views does not own the data, but h
 Every NumPy array has the attribute base that returns None if the array owns the data.
 
 Otherwise, the base  attribute refers to the original object. """
+#Shape of an array is the number of elementsnin each dimension
+#NumPy arrays have an attribute called shape that returns a tuple with each index having the number of corresponding elements.
+a=np.array([[12,34,56],[19,89,45]])
+print(a.shape)
+b=np.array([23,89,45],ndmin=5)
+print(b.shape)
+#Reshaping Array means changing the shape of an array.The shape of an array means the no of elements in each dimension whether the reshaping means changing the,add or remove dimensions or change the number of elements in each dimension
+#Convert the 1 d array into 2d array
+""" c=np.array([12,78,45,90,34])
+newarr = c.reshape(4, 3)
+
+print(newarr)
+ """
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+newarr = arr.reshape(4, 3)
+
+print(newarr)
+#Reshaping from 1d to 3d
+newarr=arr.reshape(2,3,2)
+print(newarr)
+#Flatenning the array means converting the multidimensional array into oned array
+i=np.array([12,34,56],[90,45,67])
+h=i.reshape(-1)
+print(h)
