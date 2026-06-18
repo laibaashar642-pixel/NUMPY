@@ -50,6 +50,15 @@ An array that has 2-D arrays (matrices) as its elements is called 3-D array.
 These are often used to represent a 3rd order tensor. """
 arr6=([[[1,2,3],[4,5,6]],[[9,10,12],[10,12,13]]])
 print(arr6)
+#Agr hamay ones aur zeros kai ilawa values fillup krni hai tu so numpy provides a full shape value function
+filled_array=np.full((2,2),7)
+print(filled_array)
+#Creating sequence of numbers in numpy arange() function used like a range function used in python language The difference is it returns numpy array we have to pass three things(start,stop,step)
+arr=np.arange(1,12,3)
+print(arr)
+#How can we create identity matrixes it is a square matrix with ones of diagonal and squares of the ones both ends here
+identity_matrix=np.eye(3)
+print(identity_matrix)
 #NumPy Arrays provides the ndim attribute that returns an integer that tells us how many dimensions the array have
 print(arr.ndim)
 print(arr1.ndim)
@@ -206,3 +215,58 @@ print(arr)
 #Numpy provides a function to stack along the height which is same as depth
 arr=np.dstack((arr1,arr2))
 print(arr)
+#Splitting is a reverse operation of array joining.Joing merge multiple arrays into single one whereas splitting breaks the single array into multiple arrays.Numpy provides a split function to split the array
+arr=np.array([12,34,56,67])
+newarr=np.array_split(arr,3)
+print(newarr)
+print(newarr[0])
+print(newarr[1])
+print(newarr[2])
+#For splitting 2d arrays
+arr=np.array([[1,2],[3,4],[9,0],[10,12],[89,67]])
+newarr=np.array_split(arr,3)
+# Use the hsplit() method to split the 2-D array into three 2-D arrays along columns.
+newarr=np.hsplit(arr,2)
+print(newarr)
+#Similar alternates to vstack() and dstack() are available as vsplit() and dsplit().
+#Searching Arrays You can search an array for a certain value, and return the indexes that get a match.To search an array, use the where() method.
+arr=np.array([[12,34,56],[90,89,56]])
+newarr=np.where(arr==34)
+print(newarr)
+#Find indexes where the values are odd
+x = np.where(arr%2 == 1)
+
+print(x)
+""" There is a method called searchsorted() which performs a binary search in the array, and returns the index where the specified value would be inserted to maintain the search order. 
+serach sorted array 1d pr kaam krta hai 2d pr nai """
+arr2=([[23,78,90,87,56,43]])
+x=np.searchsorted(arr2,7)
+""" Search From the Right Side
+By default the left most index is returned, but we can give side='right' to return the right most index instead. """
+
+x = np.searchsorted(arr, 7, side='right')
+
+print(x)
+""" Multiple Values
+To search for more than one value, use an array with the specified values. """
+x=np.searchsorted(arr,[2,4,6])
+print(x)
+#Sorting means putting elements in an ordered sequence.Ordered sequence is any sequence that has an order corresponding to elements, like numeric or alphabetical, ascending or descending.The NumPy ndarray object has a function called sort(), that will sort a specified array.
+
+arr=np.array([2,3,1])
+print(np.sort(arr))
+#  This method returns a copy of the array, leaving the original array unchanged.You can also sort array of things and any other datatype
+arr=np.array(['banana','apple','lemon'])
+print(np.sort(arr))
+#if you use sort method on 2d array then both arrays will be sorted
+arr = np.array([[3, 2, 4], [5, 0, 1]])
+
+print(np.sort(arr))
+#Filtering Method Getting some elements out of an exsisting array and creating a new arrayy out of them is called filtering.In numpy you filter an array by usig boolean index listIf the value at an index is True that element is contained in the filtered array, if the value at that index is False that element is excluded from the filtered array.
+arr = np.array([41, 42, 43, 44])
+
+x = [True, False, True, False]
+
+newarr = arr[x]
+
+print(newarr)
