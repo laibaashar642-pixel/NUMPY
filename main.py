@@ -239,17 +239,17 @@ x = np.where(arr%2 == 1)
 print(x)
 """ There is a method called searchsorted() which performs a binary search in the array, and returns the index where the specified value would be inserted to maintain the search order. 
 serach sorted array 1d pr kaam krta hai 2d pr nai """
-arr2=([[23,78,90,87,56,43]])
-x=np.searchsorted(arr2,7)
+arr2=([23,78,90,87,56,43])
+x=np.searchsorted(arr2,7,side='right')
 """ Search From the Right Side
 By default the left most index is returned, but we can give side='right' to return the right most index instead. """
 
-x = np.searchsorted(arr, 7, side='right')
+x = np.searchsorted(arr2, 7, side='right')
 
 print(x)
 """ Multiple Values
 To search for more than one value, use an array with the specified values. """
-x=np.searchsorted(arr,[2,4,6])
+x=np.searchsorted(arr2,[2,4,6])
 print(x)
 #Sorting means putting elements in an ordered sequence.Ordered sequence is any sequence that has an order corresponding to elements, like numeric or alphabetical, ascending or descending.The NumPy ndarray object has a function called sort(), that will sort a specified array.
 
