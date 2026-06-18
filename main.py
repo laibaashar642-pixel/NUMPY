@@ -17,7 +17,8 @@ zeros_array=np.zeros(3)
 print(zeros_array)
 #Aur agr muje zeros ki jga one fillup krna ho
 ones_array=np.array([1,2,3])
-print(ones_array)
+print(ones_array
+      )
 """Dimensions in Arrays
 A dimension in arrays is one level of array depth (nested arrays).Creation of arrays from python list 
 
@@ -176,3 +177,32 @@ for x in arr:
     for y in x:
         for z in y:
             print(z)
+
+#Array Join means putting contents of two or more arrays in a single array.In SQL we joined tables by a key whereas in numpy we join array by axes We pass a sequence of arrays that we want to join to the concatenate() function, along with the axis. If axis is not explicitly passed, it is taken as 0.
+arr1=np.array([12,34,56])
+arr2=np.array([12,34,56])
+arr=np.concatenate((arr1,arr2))
+print(arr)
+#join 2d arrays along rows axis=1
+arr1=np.array([[1,2,3],[3,4,5]])
+arr2=np.array([[45,67,90],[9,2,1]])
+arr=np.concatenate((arr1,arr2),axis=1)
+print(arr)
+#Joining arrays as by using stack functionStacking is same as concatenation, the only difference is that stacking is done along a new axis.
+
+""" We can concatenate two 1-D arrays along the second axis which would result in putting them one over the other, ie. stacking.
+
+We pass a sequence of arrays that we want to join to the stack() method along with the axis. If axis is not explicitly passed it is taken as 0. """
+arr1=np.array([12,56,90])
+arr2=np.array([1,57,80])
+arr=np.stack((arr1,arr2),axis=1)
+print(arr)
+#Numpy also provides a function hstack to make stacking along the rows
+arr=np.hstack((arr1,arr2))
+print(arr)
+#Stacking along the columns numpy provides us the vstack function
+arr=np.vstack((arr1,arr2))
+print(arr)
+#Numpy provides a function to stack along the height which is same as depth
+arr=np.dstack((arr1,arr2))
+print(arr)
