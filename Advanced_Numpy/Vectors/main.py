@@ -45,3 +45,4 @@ ahmad_vector=df.loc["Ahmad"].values
 #Ali aur sara ki similar values
 sim=cosine_similarity(ali_vector,sana_vector)
 print(f"Ali & Sara similarity:{sim:.2f}")
+#real Use Ai 
