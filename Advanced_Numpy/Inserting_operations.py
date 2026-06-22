@@ -40,8 +40,47 @@ print(np.hstack((arr1,arr2)))#Horizontally Stack
 arr=np.array([12,34,56,78])
 print(np.split(arr,2))
 # Broadcasting ka matlab hai different sizes ke arrays par arithmetic operations perform karna bina manually loops likhe.Vectorization ka matlab hai operations ko poore array par ek saath perform karna instead of using loops.
-prices=[100,200,400]
-discount=10 #10%discount
-final_prices=[]
+prices = [100,200,400]
+discount =  10 #10%discount
+final_prices = []
 for price in prices:
-    final_prices = price - (prices * discount/100)
+    discounted_price=price-(price*discount/100)
+    final_prices.append(discounted_price)
+print(final_prices)
+#Done this with the help of vectorization
+prices = np.array([100,200,300,700])
+discount=10 #This is scalar value(means single value)
+final_prices = prices - (prices * discount/100)
+print(final_prices)
+#how numpy handles  different different shapes of the array
+#mainly Broadcasting has three most imp rules first is matching dimension second is expanding second elements like this [1,2,3] + 10 so it will be [11,12,13] and the third command is  incomapatible shapes kai agr shapes match nai ho rhy tu wo expand nai kry gha like this [1,2,3]+[1,2] so their shapes not matching and it thorws the error
+#Broadcasting with single array
+arr=np.array([23,56,90,72])
+result=arr*2
+print(result)
+#Broadcasting with 1d array and 2d array
+matrix=np.array([[1,2,3],[4,5,6]])# 2*3  matrix
+vector=np.array([10,20,30])#1d array
+result=matrix+vector
+print(result)
+#Eg 3 of when error throws
+""" arr1=np.array([[1,2,3],[4,5,6]])
+ar2=np.array([1,2])#only 2 elements reamining
+result=arr1+arr2
+print(result) """
+#Vectorization means aik entire array pr aik hi baar mai operations perform krna bina loops ko use kiye but ye list method python mai bht slow hai
+#this is slow method approach
+list1=[1,2,3]
+list2=[4,5,6]
+result=[x+y for x,y in zip(list1,list2)]
+print(result)
+#then we did fast method approach
+arr1=np.array([23,45,90])
+arr2=np.array([20,4,89])
+print(arr1+arr2)
+#Same method for vector multiplication
+
+arr1=np.array([23,45,90])
+arr2=np.array([20,4,89])
+print(arr1+arr2 * 3)
+#The summary is broadcasting means expanding the smaller values into longer values faster than loops it used to expand the 1d into 2d  vectorization means kai entire array pr hi aik baar operations perform kr dena 100 times faster than loop it used on matrixes
